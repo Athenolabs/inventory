@@ -1,0 +1,18 @@
+{
+ "add_total_row": 0, 
+ "apply_user_permissions": 1, 
+ "creation": "2016-10-19 13:42:31.769382", 
+ "disabled": 0, 
+ "docstatus": 0, 
+ "doctype": "Report", 
+ "idx": 0, 
+ "is_standard": "Yes", 
+ "modified": "2016-10-19 13:42:31.769382", 
+ "modified_by": "Administrator", 
+ "module": "Inventory", 
+ "name": "Laporan Komisi Detail", 
+ "owner": "Administrator", 
+ "ref_doctype": "Commission", 
+ "report_name": "Laporan Komisi Detail", 
+ "report_type": "Script Report"
+}

@@ -8,7 +8,7 @@
  "custom": 0, 
  "docstatus": 0, 
  "doctype": "DocType", 
- "document_type": "Document", 
+ "document_type": "Setup", 
  "editable_grid": 1, 
  "fields": [
   {
@@ -47,7 +47,7 @@
  "issingle": 0, 
  "istable": 0, 
  "max_attachments": 0, 
- "modified": "2016-08-19 09:05:24.861106", 
+ "modified": "2016-08-31 09:42:57.605565", 
  "modified_by": "Administrator", 
  "module": "Inventory", 
  "name": "Colour", 

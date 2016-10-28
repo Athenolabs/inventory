@@ -8,7 +8,7 @@
  "docstatus": 0, 
  "doctype": "DocType", 
  "document_type": "Document", 
- "editable_grid": 1, 
+ "editable_grid": 0, 
  "fields": [
   {
    "allow_on_submit": 0, 
@@ -106,7 +106,7 @@
    "precision": "", 
    "print_hide": 0, 
    "print_hide_if_no_value": 0, 
-   "read_only": 0, 
+   "read_only": 1, 
    "report_hide": 0, 
    "reqd": 0, 
    "search_index": 0, 
@@ -248,7 +248,7 @@
  "issingle": 0, 
  "istable": 1, 
  "max_attachments": 0, 
- "modified": "2016-08-25 10:54:06.114762", 
+ "modified": "2016-08-31 00:00:41.545269", 
  "modified_by": "Administrator", 
  "module": "Inventory", 
  "name": "Data Inventory", 

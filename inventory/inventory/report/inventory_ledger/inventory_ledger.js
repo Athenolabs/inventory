@@ -3,6 +3,7 @@
 
 frappe.query_reports["Inventory Ledger"] = {
 	"filters": [
+		/*
 		{
 			"fieldname": "from_date",
 			"label":__("From"),
@@ -13,17 +14,26 @@ frappe.query_reports["Inventory Ledger"] = {
 			"label":__("To"),
 			"fieldtype": "Date"
 		},
+		*/
 		{
-			"fieldname": "type",
-			"label":__("Type"),
+			"fieldname": "item",
+			"label":__("Item Code"),
+			"fieldtype": "Link",
+			"options": "Item"
+		},
+		{
+			"fieldname": "document",
+			"label":__("Document"),
 			"fieldtype": "Select",
-			"options": "Sales Order" + '\n'
-				+ "Sales Invoice" + '\n'
-				+ "Delivery Note" + '\n'
-				+ "Stock Entry" + '\n'
-				+ "Purchase Order" + '\n'
-				+ "Purchase Invoice" + '\n'
-				+ "Purchase Receipt"
-		}
+			"options": "Packing List Receipt" + '\n'
+				+ "Packing List Delivery" + '\n'
+				+ "Stock Recon Inventory" + '\n'
+				+ "Repack Inventory" 
+		},
+		{
+			"fieldname": "document_no",
+			"label":__("Document No"),
+			"fieldtype": "Data"
+		},
 	]
 }

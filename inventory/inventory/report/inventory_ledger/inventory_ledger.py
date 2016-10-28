@@ -6,33 +6,12 @@ import frappe
 
 def execute(filters=None):
 	columns, data = [], []
-	columns = [
-
-	"DocType:Data:100",
-	"DocType No:Data:100",
-	"Posting Date:Date:100",
-	"Item Code Variant:Data:150",
-	"UOM:Data:100",
-	"Warehouse:Data:150",
-	"Yard / Meter per Roll:Float:100",
-
-	"(In)Qty Yard / Meter:Float:100",
-	"(in)Qty Roll:Int:100",
-
-	"(out)Qty Yard / Meter:Float:100",
-	"(out)Qty Roll:Int:100",
-	"Colour:Data:100"
-
-	]
+	columns = ["Item Code:Link/Item:100","Colour:Link/Colour:100","Yard/Meter:Float:100","Group:Data:100",
+		"In Qty:Float:100","Out Qty:Float:100","Document:Link/DocType:100","Document No:Dynamic Link/Document:100"]
 	
-	doctype_clause = ""
-	date_clause = ""
-	
-	if filters.get("type") :
-		doctype_clause = """ AND il.`doctype_type`="{0}" """.format(filters.get("type"))
-	if filters.get("from_date") and filters.get("to_date") :
-		date_clause = """ AND il.`posting_date` BETWEEN '{0}' AND '{1}' """.format(filters.get("from_date"),filters.get("to_date"))
-	
+	item_clause = ""
+	if filters.get("item") :
+		item_clause = """ AND ild.`item_code` """
 	
 	data = frappe.db.sql(""" 
 		SELECT 

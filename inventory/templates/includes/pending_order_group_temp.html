@@ -1,0 +1,64 @@
+<!-- coding ini yang membuat bisa di scroll kesamping ketika layarnya di kecilkan, untuk class name a itu classnya div di bawah-->
+<script>
+	document.body.style.overflowX = "auto";
+	document.getElementsByClassName("form-grid")[0].style.minWidth="600px";
+
+	var ta = document.getElementsByClassName("a");
+	for(var i =0, il = ta.length;i<il;i++){
+	     ta[i].style.display="inline-block";
+	}
+</script>
+<!--  -->
+
+{% var visible_columns = row.get_visible_columns(["qty_inventory", "qty_pending_order", "qty_alokasi_barang", "total_roll", "colour", "yard_atau_meter_pre_roll"]); %}
+
+{% if(!doc) { %}
+	<div class="row">
+		<!-- <div class="col-sm-6 col-xs-8">{%= __("Items") %}</div> -->
+		<div class="a col-sm-4">
+			{%= __("Colour") %}
+		</div>
+		<div class="a col-sm-2 text-right">
+			{%= __("Rate") %}
+		</div>
+		<div class="a col-sm-2 text-right">
+			{%= __("Qty di Inventory") %}
+		</div>
+		<div class="a col-sm-2 text-right">
+			{%= __("Qty di Pending Order") %}
+		</div>
+		<div class="a col-sm-2 text-right">
+			{%= __("Qty di Alokasi Barang") %}
+		</div>
+	</div>
+{% } else { %}
+	{% var visible_column_fieldnames = $.map(visible_columns, function(x, i) {return x.fieldname}); %}
+	<div class="row">
+		<!-- <div class="col-sm-6 col-xs-8">{%= __("Items") %}</div> -->
+		<div class="a col-sm-4">
+			{% if(doc.colour){ %}
+				{% var cek = doc.colour.indexOf("|") %}
+				{% if(cek > -1){ %}
+					{%= doc.colour.split("|")[0] %} <small> ({%= doc.colour.split("|")[1] %}) </small>
+				{% }else{ %}
+					{%= doc.colour %}
+				{% } %}
+			{% } %}
+			<br>
+			<small>(Yard / Meter : {%= doc.yard_atau_meter_per_roll %})</small>
+		</div>
+		<div class="a col-sm-2 text-right">
+			{%= doc.rate %}
+		</div>
+		<div class="a col-sm-2 text-right">
+			{%= doc.qty_inventory %}
+		</div>
+		<div class="a col-sm-2 text-right">
+			{%= doc.qty_pending_order %}
+		</div>
+		<div class="a col-sm-2 text-right">
+			{%= doc.qty_alokasi_barang %}
+		</div>
+		
+	</div>
+{% } %}
